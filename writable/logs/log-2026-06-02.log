@@ -1,0 +1,155 @@
+ERROR - 2026-06-02 04:34:10 --> Duplicate key name 'kode_kecamatan'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `kecamatan` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode_kecamatan` VARCHAR(10) NOT NULL UNIQUE,
+	`nama_kecamatan` VARCHAR(100) NOT NULL,
+	`kode_kabupaten` VARCHAR(10) NOT NULL,
+	`nama_kabupaten` VARCHAR(100) NOT NULL,
+	`kode_provinsi` VARCHAR(10) NOT NULL,
+	`nama_provinsi` VARCHAR(100) NOT NULL,
+	`status` ENUM(\'aktif\',\'nonaktif\') NOT NULL DEFAULT \'aktif\',
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	`deleted_at` DATETIME NULL,
+	CONSTRAINT `pk_kecamatan` PRIMARY KEY(`id`),
+	KEY `kode_kecamatan` (`kode_kecamatan`),
+	KEY `kode_kabupaten` (`kode_kabupaten`),
+	KEY `kode_provinsi` (`kode_provinsi`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `kecamatan` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode_kecamatan` VARCHAR(10) NOT NULL UNIQUE,
+	`nama_kecamatan` VARCHAR(100) NOT NULL,
+	`kode_kabupaten` VARCHAR(10) NOT NULL,
+	`nama_kabupaten` VARCHAR(100) NOT NULL,
+	`kode_provinsi` VARCHAR(10) NOT NULL,
+	`nama_provinsi` VARCHAR(100) NOT NULL,
+	`status` ENUM(\'aktif\',\'nonaktif\') NOT NULL DEFAULT \'aktif\',
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	`deleted_at` DATETIME NULL,
+	CONSTRAINT `pk_kecamatan` PRIMARY KEY(`id`),
+	KEY `kode_kecamatan` (`kode_kecamatan`),
+	KEY `kode_kabupaten` (`kode_kabupaten`),
+	KEY `kode_provinsi` (`kode_provinsi`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `kecamatan` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode_kecamatan` VARCHAR(10) NOT NULL UNIQUE,
+	`nama_kecamatan` VARCHAR(100) NOT NULL,
+	`kode_kabupaten` VARCHAR(10) NOT NULL,
+	`nama_kabupaten` VARCHAR(100) NOT NULL,
+	`kode_provinsi` VARCHAR(10) NOT NULL,
+	`nama_provinsi` VARCHAR(100) NOT NULL,
+	`status` ENUM(\'aktif\',\'nonaktif\') NOT NULL DEFAULT \'aktif\',
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	`deleted_at` DATETIME NULL,
+	CONSTRAINT `pk_kecamatan` PRIMARY KEY(`id`),
+	KEY `kode_kecamatan` (`kode_kecamatan`),
+	KEY `kode_kabupaten` (`kode_kabupaten`),
+	KEY `kode_provinsi` (`kode_provinsi`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `kecamatan` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`kode_kecamatan` VARCHAR(10) NOT NULL UNIQUE,
+	`nama_kecamatan` VARCHAR(100) NOT NULL,
+	`kode_kabupaten` VARCHAR(10) NOT NULL,
+	`nama_kabupaten` VARCHAR(100) NOT NULL,
+	`kode_provinsi` VARCHAR(10) NOT NULL,
+	`nama_provinsi` VARCHAR(100) NOT NULL,
+	`status` ENUM(\'aktif\',\'nonaktif\') NOT NULL DEFAULT \'aktif\',
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	`deleted_at` DATETIME NULL,
+	CONSTRAINT `pk_kecamatan` PRIMARY KEY(`id`),
+	KEY `kode_kecamatan` (`kode_kecamatan`),
+	KEY `kode_kabupaten` (`kode_kabupaten`),
+	KEY `kode_provinsi` (`kode_provinsi`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 APPPATH\Database\Migrations\2026-06-02-043326_CreateKecamatan.php(67): CodeIgniter\Database\Forge->createTable('kecamatan')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreateKecamatan->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2026-06-02 04:48:25 --> ErrorException: Attempt to read property "defaultGroup" on null
+[Method: CLI, Route: migrate]
+in SYSTEMPATH\Database\MigrationRunner.php on line 154.
+ 1 SYSTEMPATH\Database\MigrationRunner.php(154): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "defaultGroup" on null', 'D:\\xampp82\\htdocs\\260505_andai_ku_walikota\\system\\Database\\MigrationRunner.php', 154)
+ 2 SYSTEMPATH\Config\Services.php(421): CodeIgniter\Database\MigrationRunner->__construct(Object(Config\Migrations), null)
+ 3 SYSTEMPATH\Config\BaseService.php(325): CodeIgniter\Config\Services::migrations(Object(Config\Migrations), null, false)
+ 4 SYSTEMPATH\Config\BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic('migrations', [...])
+ 5 SYSTEMPATH\Config\Services.php(416): CodeIgniter\Config\BaseService::getSharedInstance('migrations', null, null)
+ 6 SYSTEMPATH\Config\BaseService.php(334): CodeIgniter\Config\Services::migrations()
+ 7 SYSTEMPATH\Config\BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic('migrations', [])
+ 8 SYSTEMPATH\Common.php(1078): CodeIgniter\Config\BaseService::get('migrations')
+ 9 SYSTEMPATH\Commands\Database\Migrate.php(73): service('migrations')
+10 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([])
+11 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+12 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+13 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+14 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-06-02 04:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-02 04:54:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-02 04:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-02 04:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-02 04:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-02 04:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-02 04:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-02 04:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-02 05:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-02 05:03:49 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard/kecamatan/index.php"
+[Method: GET, Route: kecamatan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/kecamatan/index.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('dashboard/kecamatan/index', [], true)
+ 3 APPPATH\Controllers\KecamatanController.php(24): view('dashboard/kecamatan/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\KecamatanController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KecamatanController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp82\\htdocs\\260505_andai_ku_walikota\\public\\index.php')
+CRITICAL - 2026-06-02 05:04:17 --> CodeIgniter\Pager\Exceptions\PagerException: "bootstrap" is not a valid Pager template.
+[Method: GET, Route: kecamatan]
+in SYSTEMPATH\Pager\Pager.php on line 124.
+ 1 SYSTEMPATH\Pager\Pager.php(124): CodeIgniter\Pager\Exceptions\PagerException::forInvalidTemplate('bootstrap')
+ 2 SYSTEMPATH\Pager\Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('kecamatan', 'bootstrap')
+ 3 APPPATH\Views\pages\dashboard\kecamatan\index.php(61): CodeIgniter\Pager\Pager->links('kecamatan', 'bootstrap')
+ 4 SYSTEMPATH\View\View.php(240): include('D:\\xampp82\\htdocs\\260505_andai_ku_walikota\\app\\Views\\pages\\dashboard\\kecamatan\\index.php')
+ 5 SYSTEMPATH\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('pages/dashboard/kecamatan/index', [], true)
+ 7 APPPATH\Controllers\KecamatanController.php(24): view('pages/dashboard/kecamatan/index', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\KecamatanController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KecamatanController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp82\\htdocs\\260505_andai_ku_walikota\\public\\index.php')
+CRITICAL - 2026-06-02 05:05:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "CodeIgniter\Pager\Views\bootstrap.php"
+[Method: GET, Route: kecamatan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('CodeIgniter\\Pager\\Views\\bootstrap.php')
+ 2 SYSTEMPATH\Pager\Pager.php(130): CodeIgniter\View\View->render('CodeIgniter\\Pager\\Views\\bootstrap')
+ 3 SYSTEMPATH\Pager\Pager.php(87): CodeIgniter\Pager\Pager->displayLinks('kecamatan', 'bootstrap')
+ 4 APPPATH\Views\pages\dashboard\kecamatan\index.php(61): CodeIgniter\Pager\Pager->links('kecamatan', 'bootstrap')
+ 5 SYSTEMPATH\View\View.php(240): include('D:\\xampp82\\htdocs\\260505_andai_ku_walikota\\app\\Views\\pages\\dashboard\\kecamatan\\index.php')
+ 6 SYSTEMPATH\View\View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('pages/dashboard/kecamatan/index', [], true)
+ 8 APPPATH\Controllers\KecamatanController.php(24): view('pages/dashboard/kecamatan/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\KecamatanController->index()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KecamatanController))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('D:\\xampp82\\htdocs\\260505_andai_ku_walikota\\public\\index.php')
